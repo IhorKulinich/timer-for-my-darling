@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Lato:300,900);
+body {
+	font-family: 'Lato', sans-serif;
+}
+/* ∞∞ global ∞∞ */
+	* {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border-color: inherit;
+	}
+
+	body {
+		width: 100vw;
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		font-size: 100%;
+		font-style: normal;
+		font-weight: 300;
+		line-height: 1;
+		margin: 0;
+		padding: 0;
+	}
+	
+/* ∞∞ text styling ∞∞ */
+	h1, h2, h3, h4, h5, h6, p, em, a, b, strong {
+		font-style: normal;
+		font-weight: 300;
+	}
+
+	strong {
+		font-size: 1.15em;
+	}
+
+	small {
+  	font-size: .85em;
+	}
+
+	ul,
+	ol,
+	menu {
+		list-style: none;
+	}
+
+	sub,
+	sup {
+  	font-size: .75em;
+  	line-height: 0;
+  	position: relative;
+  	vertical-align: baseline;
+	}
+	
+	sup {
+  	top: -0.5em;
+	}
+	
+	sub {
+  	bottom: -0.25em;
+	}
+
+	code,
+	kbd,
+	pre,
+	samp {
+  	font-family: monospace, monospace;
+  	font-size: 1em;
+	}
+
+	abbr[title] {
+  	border-bottom: 1px dotted;
+	}
+	
+	dfn {
+  	font-style: italic;
+	}
+
+/* ∞∞ form elements ∞∞ */
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+  	color: inherit;
+  	font: inherit;
+  	margin: 0;
+  	background: transparent;
+		outline: none;
+		border: none;
+		border-radius: 0;
+		-webkit-appearance: none;
+		   -moz-appearance: none;
+		        appearance: none;
+	}
+	
+	button,
+	select {
+  	text-transform: none;
+  	cursor: pointer;
+	}
+
+	button[disabled],
+	html input[disabled] {
+  	cursor: default;
+	}
+	
+	fieldset {
+  	border: none;
+  	margin: 0;
+  	padding: 0;
+		min-width: 0;
+	}
+
+	textarea {
+		resize: none;
+	}
+
+/* ∞∞ link styling ∞∞ */
+	a {
+		display: inline;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	a:active,
+	a:hover {
+  	outline: 0;
+	}
+
+	/* a::before {
+		width: 100%;
+		height: .2rem;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: #7ac;
+	}
+
+	a:hover::before {
+		background-color: #49e;
+		height: .35rem;
+	} */
+
+/* ∞∞ hr using box ∞∞ */
+	hr {
+		border: none;
+  	box-sizing: border-box;
+  	height: .075rem;
+	}
+
+/* ∞∞ hidden ∞∞ */
+	[hidden],
+	template {
+  	display: none;
+	}
+
+/* ∞∞ media specific ∞∞ */
+	audio:not([controls]) {
+  	display: none;
+  	height: 0;
+	}
+
+/* ∞∞ tables ∞∞ */
+	table {
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  	border: none;
+	}
+
+	td,
+	th {
+		margin: 0;
+  	padding: 0;
+  	font-weight: inherit;
+		text-align: inherit;
+	}
+
+
+/*====================================================== ∞∞ browser specific ∞∞ */
+
+/* ∞∞ IE ∞∞ */
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	main,
+	menu,
+	nav,
+	section,
+	summary {
+  	display: block;
+	}
+	
+	audio,
+	canvas,
+	progress,
+	video {
+  	display: inline-block;
+  	vertical-align: baseline;
+	}
+
+	a {
+  	background-color: transparent;
+	}
+
+	button {
+  	overflow: visible;
+	}
+
+	html {
+  	-ms-text-size-adjust: 100%;
+	}
+
+	img {
+  	border: none;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+  	box-sizing: border-box;
+  	padding: 0;
+	}
+
+	legend {
+  	border: none;
+  	padding: 0;
+	}
+
+	mark {
+  	
+  	color: #000;
+	}
+
+	svg:not(:root) {
+  	overflow: hidden;
+	}
+
+	textarea {
+  	overflow: auto;
+	}
+
+/* ∞∞ moz ∞∞ */
+	body {
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	button::-moz-focus-inner,
+	input::-moz-focus-inner {
+  	border: none;
+  	padding: 0;
+	}
+
+	input {
+  	line-height: normal;
+	}
+
+/* ∞∞ webkit ∞∞ */
+	* {
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+	}
+
+	html {
+  	-webkit-text-size-adjust: 100%;
+	}
+
+	body {
+		-webkit-font-smoothing: antialiased !important;
+	}
+
+	blockquote {
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+	}
+
+	fieldset {
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+		-webkit-padding-before: 0;
+		-webkit-padding-start: 0;
+		-webkit-padding-end: 0;
+		-webkit-padding-after: 0;
+	}
+
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+  	-webkit-appearance: none; 
+  	margin: 0; 
+  	height: auto;
+	}
+
+	input[type="search"] {
+  	-webkit-appearance: textfield;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button,
+	input[type="search"]::-webkit-search-decoration,
+	progress {
+  	-webkit-appearance: none;
+	}
+
+i {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+h2, h3 {
+  font-size: 7px;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  position: absolute;
+  left: 50%;
+  top: 32%;
+  transform: translateX(-50%);
+}
+
+h2 {
+  font-size: 8px;
+  top: 29%;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 10px;
+  width: 60px;
+  height: 15px;
+  background-color: #F6EEE8;
+  border-radius: 2px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 27%;
+  transform: translateX(-50%);
+}
+#prebc{
+	border-radius: 100%;
+	background-color: #F4F48E;
+	width: 170px;
+  height: 170px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+section.border-clock {
+  background-color: #EBEB83;
+	border-radius: 100%;
+
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+section.clock {
+  width: 152px;
+  height: 152px;
+  background-color: #FDFAF7;
+  border: 2px solid #E5E375;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+section.clock div.minutes, section.clock div.hours, section.clock div.seconds  {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 0;
+  }
+
+section.clock div.minutes {transition: transform 1s linear}
+
+section.clock div.seconds::before, section.clock div.minutes::before, section.clock div.hours::before {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 0;
+    transform: translateX(-50%);
+  }
+
+section.clock div.seconds::before {
+    width: 1px;
+    height: 53px;
+    background-color: #EB6444;
+  }
+
+section.clock div.minutes::before {
+    width: 3px;
+    height: 55px;
+    background-color: #68C3D4;
+    border-radius: 3px;
+  }
+
+section.clock div.hours::before {
+    width: 3px;
+    height: 30px;
+    background-color: #68C3D4;
+    border-radius: 3px;
+  }
+
+section.clock .cercle {
+    width: 7px;
+    height: 7px;
+    background-color: #FDFAF7;
+    border: 2px solid #EB6444;
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+section.clock span {
+    display: block;
+    width: 1px;
+    height: 95%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+section.clock span::after {
+      content: "";
+      background-color: #A0A1A4;
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      top: 0;
+      left: 0;
+    }
+
+section.clock span::before {
+      content: "";
+      background-color: #A0A1A4;
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      bottom: 0;
+      left: 0;
+    }
+
+section.clock span.fives::after,
+      section.clock span.fives::before {height: 20px}
+
+section.clock ul {
+    height: 38%;
+    width: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+  }
+
+section.clock ul li {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: 50% 100%;
+    }
+
+section.clock ul li i {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+section.clock ul li:nth-child(2) {
+        transform: rotate(30deg);
+      }
+
+section.clock ul li:nth-child(2) i {transform: translateX(-50%) rotate(-30deg)}
+
+section.clock ul li:nth-child(3) {
+        transform: rotate(60deg);
+      }
+
+section.clock ul li:nth-child(3) i {transform: translateX(-50%) rotate(-60deg)}
+
+section.clock ul li:nth-child(4) {
+        transform: rotate(90deg);
+      }
+
+section.clock ul li:nth-child(4) i {transform: translateX(-50%) rotate(-90deg)}
+
+section.clock ul li:nth-child(5) {
+        transform: rotate(120deg);
+      }
+
+section.clock ul li:nth-child(5) i {transform: translateX(-50%) rotate(-120deg)}
+
+section.clock ul li:nth-child(6) {
+        transform: rotate(150deg);
+      }
+
+section.clock ul li:nth-child(6) i {transform: translateX(-50%) rotate(-150deg)}
+
+section.clock ul li:nth-child(7) {
+        transform: rotate(180deg);
+      }
+
+section.clock ul li:nth-child(7) i {transform: translateX(-50%) rotate(-180deg)}
+
+section.clock ul li:nth-child(8) {
+        transform: rotate(210deg);
+      }
+
+section.clock ul li:nth-child(8) i {transform: translateX(-50%) rotate(-210deg)}
+
+section.clock ul li:nth-child(9) {
+        transform: rotate(240deg);
+      }
+
+section.clock ul li:nth-child(9) i {transform: translateX(-50%) rotate(-240deg)}
+
+section.clock ul li:nth-child(10) {
+        transform: rotate(270deg);
+      }
+
+section.clock ul li:nth-child(10) i {transform: translateX(-50%) rotate(-270deg)}
+
+section.clock ul li:nth-child(11) {
+        transform: rotate(300deg);
+      }
+
+section.clock ul li:nth-child(11) i {transform: translateX(-50%) rotate(-300deg)}
+
+section.clock ul li:last-child  {
+        transform: rotate(330deg);
+      }
+
+section.clock ul li:last-child i {transform: translateX(-50%) rotate(-330deg)}
+
+@-webkit-keyframes progress-bar-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 40px 0; }
+}
+
+@keyframes progress-bar-stripes {
+  from { background-position: 0 0; }
+  to { background-position: 40px 0; }
+}
+</style>
+  </head>
+  <body style="-webkit-app-region:drag;">
+
+
+<img src="./tl.png" width="210px" style="margin-left: 90px; margin-top: 20px; position: fixed; ">
+<img src="./tr.png" width="150px" style="margin-left: 230px; margin-top: 100px; position: fixed;">
+
+
+
+<section class="border-clock" id="bc"></section>
+<div id="prebc"></div>
+<script>
+var tofor=true;
+var open=false;
+</script>
+<section class="clock" ondblclick="if (!open) { open=true; document.getElementById('timeto').style.display='none'; document.getElementById('cont').style.display='block'; document.getElementById('precont').style.display='block';} else {open=false; document.getElementById('cont').style.display='none'; document.getElementById('precont').style.display='none';}" style="-webkit-app-region: no-drag;">
+  <ul>
+    <li><i>12</i></li>
+    <li><i>1</i></li>
+    <li><i>2</i></li>
+    <li><i>3</i></li>
+    <li><i>4</i></li>
+    <li><i>5</i></li>
+    <li><i>6</i></li>    
+    <li><i>7</i></li>    
+    <li><i>8</i></li>    
+    <li><i>9</i></li>    
+    <li><i>10</i></li>    
+    <li><i>11</i></li>
+  </ul>
+  
+
+<img src="./bl.png" width="200px" style="margin-left: -100px; margin-top: 20px; position: fixed;">
+<img src="./br.png" width="200px" style="margin-top: 50px; margin-left: 50px; position: fixed;">
+
+
+  
+  <output class="date"></output>
+  
+  <div class="minutes"></div>
+  <div class="hours"></div> 
+  <div class="seconds"></div>
+  <div class="cercle"></div>
+  
+</section>
+<div id="precont" style="display: none; position: fixed; margin-top: -10px; margin-left: 90px; width: 230px; height: 190px; background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), -webkit-linear-gradient(top, #f6f5f0, #e1e0dc);
+  background: linear-gradient(-45deg, rgba(255, 255, 255, 0.6) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.6) 75%, transparent 75%, transparent), linear-gradient(top, #f6f5f0, #e1e0dc);
+  background-repeat: repeat;
+  -webkit-background-size: 40px 40px, 100% 100%;
+  background-size: 40px 40px, 100% 100%;
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;" >
+<div id="cont" style="-webkit-app-region: no-drag; display: none; position: fixed; margin-top: 10px; height: 170px; background: lightgrey; width: 210px; margin-left: 10px;">
+<div style="display: grid; grid-template-columns: 32% 32% 32%; grid-auto-rows: 20px; grid-column-gap: 5px;">
+<div id="1st" style="border: 2px solid orange;">custom 1</div>
+<div id="2nd" style="border: 2px solid orange;">custom 2</div>
+<div id="cus" style="border: 2px solid orange; background: orange;">custom</div>
+</div>
+<div style="display: grid; grid-template-columns: 49% 49%; margin-top: 5px; grid-auto-rows: 20px; grid-column-gap: 5px;">
+<div id="to" style="border: 2px solid orange;">custom 1</div>
+<div id="for" style="border: 2px solid orange; background: orange;">custom</div>
+</div>
+<div id="tof" style="margin-top: 30px; margin-left: 40px; display: none;">
+	<input type="text" size="10" value="" id="h" style="background: #e6e6e6; border: 1px solid red;">
+	<input type="text" size="10" value="" id="m" style="background: #e6e6e6; border: 1px solid red;">
+</div>
+<div id="forf" style="margin-top: 30px; margin-left: 40px;">
+	<input type="text" size="10" value="10" id="mto" style="background: #e6e6e6; border: 1px solid red;">
+</div>
+<div style="margin-top: 55px; display: grid; grid-template-columns: 49% 49%; grid-auto-rows: 20px;  grid-column-gap: 5px;">
+<div id="run" style="border: 2px solid orange;">run</div>
+<div id="save" style="border: 2px solid orange;">save</div>
+</div>
+</div>
+
+<div id="timeto" style="position:fixed; margin-top: -130px; font-size: xx-large; font-weight: bold; color: orange; border: 2px solid orange; display: none; "></div>
+<audio id="audio" src="https://webstudio.network/alert.mp3" preload="auto"></audio>
+<script>
+var err, timeout, interval, run=false;
+
+document.getElementById("to").onclick=function(){
+	document.getElementById("tof").style.display="block";
+	document.getElementById("forf").style.display="none";
+	tofor=false;
+};
+
+document.getElementById("for").onclick=function(){
+	document.getElementById("tof").style.display="none";
+	document.getElementById("forf").style.display="block";
+	tofor=true;
+};
+
+document.getElementById("1st").onclick=function(){
+	var time = new Date();
+  
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+
+
+	 document.getElementById("cus").style.background="none";
+ document.getElementById("1st").style.background="orange";
+  document.getElementById("2nd").style.background="none";
+  document.getElementById("save").style.border="2px solid orange";
+  document.getElementById("save").innerHTML="save";
+
+  var fs = require('fs');
+  var textByLine=fs.readFileSync("timer.txt", "utf8");
+textByLine = textByLine.toString().split("\n");
+
+  var k=0; var valueh, valuem;
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="1st"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if(!tofor){
+if (valueh!=undefined) {document.getElementById("h").value=parseInt(valueh)+hours;} else {document.getElementById("h").value="пусто";}
+if (valuem!=undefined) {document.getElementById("m").value=parseInt(valuem)+minutes;} else {document.getElementById("m").value="пусто";}
+} else {document.getElementById("mto").value=parseInt(valuem)+60*parseInt(valueh);}
+
+
+
+  document.getElementById("save").onclick=function(){
+  	console.log(textByLine);
+  	if (textByLine===undefined||textByLine.length==1){
+  		console.log("undefined?!");
+  		if (!tofor){
+  		var data="1st"+"\n"+(document.getElementById("h").value-hours)+"\n"+(document.getElementById("m").value-minutes);
+  	} else {
+		var data="1st"+"\n"+(Math.trunc(parseInt(document.getElementById("mto").value)/60))+"\n"+(document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60));
+  	}
+  	fs.writeFile('timer.txt', data, (error) => { 
+    if (error) throw err; 
+}) ;
+  } else {
+  	console.log("not undefined");
+  	var found=false;
+  	k=0; var valueh, valuem;
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="1st"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (!found) {
+  		console.log("not found");
+  		if (!tofor){
+  			var data="1st"+"\n"+(document.getElementById("h").value-hours)+"\n"+(document.getElementById("m").value-minutes);
+  		} else {
+  			var data="1st"+"\n"+(Math.trunc(parseInt(document.getElementById("mto").value)/60))+"\n"+(document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60));
+  		}
+  		data  =textByLine.join("\n");
+  		fs.writeFile('timer.txt', data, (error) => { 
+    		if (error) console.log(error); 
+		}) ;
+  	}
+
+  }
+};
+};
+document.getElementById("2nd").onclick=function(){
+	var time = new Date();
+  
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+
+
+  document.getElementById("cus").style.background="none";
+ document.getElementById("1st").style.background="none";
+  document.getElementById("2nd").style.background="orange";
+  document.getElementById("save").style.border="2px solid orange";
+  document.getElementById("save").innerHTML="save";
+
+  var fs = require('fs');
+  var textByLine=fs.readFileSync("timer.txt", "utf8");
+textByLine = textByLine.toString().split("\n");
+console.log(textByLine[0]);
+
+ var k=0; var valueh, valuem;
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if (k<textByLine.length) {
+  	if (textByLine[k]==="2nd"){
+  		console.log(k);
+  		valueh=textByLine[k+1];
+  		valuem=textByLine[k+2];
+  	} 
+  	
+  	k++;
+  }
+  if(!tofor){
+if (valueh!=undefined) {document.getElementById("h").value=parseInt(valueh)+hours;} else {document.getElementById("h").value="пусто";}
+if (valuem!=undefined) {document.getElementById("m").value=parseInt(valuem)+minutes;} else {document.getElementById("m").value="пусто";}
+} else {document.getElementById("mto").value=parseInt(valuem)+60*parseInt(valueh);}
+
+
+
+  document.getElementById("save").onclick=function(){
+  	console.log(textByLine);
+  	if (textByLine===undefined||textByLine.length==1){
+  		console.log("undefined?!");
+  		if (!tofor){
+  		var data="2nd"+"\n"+(document.getElementById("h").value-hours)+"\n"+(document.getElementById("m").value-minutes);
+  	} else {
+		var data="2nd"+"\n"+(Math.trunc(parseInt(document.getElementById("mto").value)/60))+"\n"+(document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60));
+  	}
+  	fs.writeFile('timer.txt', data, (error) => { 
+    if (error) throw err; 
+}) ;
+  } else {
+  	console.log("not undefined");
+  	var found=false;
+  	k=0; var valueh, valuem;
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (k<textByLine.length) {
+  		if (textByLine[k]==="2nd"){
+  			found=true;
+  			console.log(k);
+  			if (!tofor){
+  			textByLine[k+1]=document.getElementById("h").value-hours;
+  			textByLine[k+2]=document.getElementById("m").value-minutes;
+  			} else {
+  				textByLine[k+1]=Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  				textByLine[k+2]=document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60);
+  			}
+  			var data=textByLine.join('\n');
+  			fs.writeFile('timer.txt', data, (error) => { 
+    			if (error) throw err; 
+			}) ;
+  		} 
+  		k++;
+  	}
+  	if (!found) {
+  		console.log("not found");
+  		if (!tofor){
+  			var data="2nd"+"\n"+(document.getElementById("h").value-hours)+"\n"+(document.getElementById("m").value-minutes);
+  		} else {
+  			var data="2nd"+"\n"+(Math.trunc(parseInt(document.getElementById("mto").value)/60))+"\n"+(document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60));
+  		}
+  		data  =textByLine.join("\n");
+  		fs.writeFile('timer.txt', data, (error) => { 
+    		if (error) console.log(error); 
+		}) ;
+  	}
+
+  }
+};
+};
+document.getElementById("cus").onclick=function(){
+	var time = new Date();
+  
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+
+  document.getElementById("cus").style.background="orange";
+ document.getElementById("1st").style.background="none";
+  document.getElementById("2nd").style.background="none";
+  document.getElementById("save").style.border="none";
+  document.getElementById("save").innerHTML="";
+
+if (!tofor){
+  if (minutes+10>60){
+	document.getElementById("h").value=hours+1;
+  	document.getElementById("m").value=minutes+10-60;
+  } else {
+  	document.getElementById("h").value=hours;
+  	document.getElementById("m").value=minutes+10;
+  }   
+} else {
+	document.getElementById("mto").value=10;
+}
+
+};
+var ideg,iideg,mdeg,mmdeg;
+
+
+document.getElementById("run").onclick=function(){
+
+
+var time = new Date();
+  
+var hours = time.getHours();
+var minutes = time.getMinutes();
+var seconds = time.getSeconds();
+
+var preh=hours;
+var prem=minutes;
+	
+ if (run) clearTimeout(timeout);
+ if (run) clearInterval(interval);
+
+run=true;
+document.getElementById("bc").style.background="#EBEB83";
+	document.getElementById("prebc").style.background="#F4F48E";
+document.getElementById("timeto").style.display="block";
+if (!tofor){
+if (document.getElementById("m").value-minutes<0){document.getElementById("timeto").innerHTML=(document.getElementById("h").value-hours-1)+":"+(document.getElementById("m").value-minutes+60);} else {document.getElementById("timeto").innerHTML=(document.getElementById("h").value-hours)+":"+(document.getElementById("m").value-minutes);}
+	} else {
+		document.getElementById("timeto").innerHTML=(Math.trunc(parseInt(document.getElementById("mto").value)/60))+":"+(document.getElementById("mto").value-60*Math.trunc(parseInt(document.getElementById("mto").value)/60));
+	}
+	function timersout(){
+//audio.play(); 
+	document.getElementById("audio").crossOrigin = 'anonymous';
+	var audio = new Audio('https://webstudio.network/alert.mp3');
+	audio.autoplay=true;
+	audio.loop=false;
+	audio.preload='auto';
+	audio.crossOrigin = 'anonymous';
+	document.getElementById("audio").play();
+	var playPromise = audio.play();
+
+// In browsers that don’t yet support this functionality,
+// playPromise won’t be defined.
+	if (playPromise !== undefined) {
+  		playPromise.then(function() {
+  		audio.play();
+    // Automatic playback started!
+  	}).catch(function(error) {
+  	console.log(error);
+    // Automatic playback failed.
+    // Show a UI element to let the user manually start playback.
+  });
+}
+	//$('#audio').html('<audio autoplay><source src="alert.mp3"></audio>');
+	setTimeout(audio.pause(), 20000);
+	clearInterval(interval);
+	document.getElementById("timeto").innerHTML="time";
+	document.getElementById("bc").style.background="#EBEB83";
+	document.getElementById("prebc").style.background="#F4F48E";
+	// document.getElementById("bc").style.border="10px solid #F4F48E";
+	// document.getElementById("bc").setAttribute("style", "-webkit-mask: none");
+	
+	} 
+	if (!tofor){
+timeout = setTimeout(timersout , (document.getElementById("h").value-hours)*3600000+(document.getElementById("m").value-minutes)*60000);
+} else {
+	timeout = setTimeout(timersout , parseInt(document.getElementById("mto").value)*60000);
+}
+
+var j=0;
+
+interval = setInterval(function(){
+time = new Date();  
+hours = time.getHours();
+minutes = time.getMinutes();
+seconds = time.getSeconds();
+
+	if (!tofor){
+	if (parseInt(document.getElementById("m").value)-minutes<0){
+		document.getElementById("timeto").innerHTML=(parseInt(document.getElementById("h").value)-hours-1)+":"+(parseInt(document.getElementById("m").value)-minutes+60);} else {
+			document.getElementById("timeto").innerHTML=(parseInt(document.getElementById("h").value)-hours)+":"+(parseInt(document.getElementById("m").value)-minutes);
+	}} else {
+		j++;
+		document.getElementById("timeto").innerHTML=parseInt(document.getElementById("mto").value)-j;
+	}
+
+if (!tofor) {
+if ((preh<12&&preh+(parseInt(document.getElementById("h").value)-hours)>12)||(preh<12&&preh+(parseInt(document.getElementById("h").value)-hours)==11&&prem+(parseInt(document.getElementById("m").value)-minutes)>60)) {
+	ideg=(preh+prem/60)*30;
+	iideg=((hours-12)+(minutes)/60)*30;
+	if (prem>parseInt(document.getElementById("m").value)){
+document.getElementById("bc").style.background="conic-gradient(red "+iideg+"deg, #EBEB83 "+iideg+"deg "+ideg+"deg, red "+ideg+"deg)";
+	} else {
+document.getElementById("bc").style.background="conic-gradient(#EBEB83 "+ideg+"deg, red "+ideg+"deg "+iideg+"deg, #EBEB83 "+iideg+"deg)";
+	}
+	
+} else {	
+	if (preh<12){
+		ideg=(preh+prem/60)*30;
+	} else {
+		ideg=((preh-12)+prem/60)*30;
+	}
+	if (preh+parseInt(document.getElementById("h").value)-hours>12||(preh+parseInt(document.getElementById("h").value)-hours==11&&prem+parseInt(document.getElementById("m").value)-minutes>60)) {
+		console.log(preh+"+"+parseInt(document.getElementById("h").value)+"-"+hours);
+		console.log(preh+parseInt(document.getElementById("h").value)-hours);
+		console.log(prem+"+"+parseInt(document.getElementById("m").value)+"-"+minutes);
+		console.log(prem+parseInt(document.getElementById("m").value)-minutes);
+		iideg=((hours-12)+(minutes)/60)*30;
+	} else {
+		iideg=(hours+minutes/60)*30;
+	}
+	document.getElementById("bc").style.background="conic-gradient(#EBEB83 "+ideg+"deg, red "+ideg+"deg "+iideg+"deg, #EBEB83 "+iideg+"deg)";
+
+	// //border: 10px solid #F4F48E;
+	// border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+ //  border-image-slice: 1;
+}
+} else {
+
+if ((preh<12&&preh+Math.trunc(parseInt(document.getElementById("mto").value)/60)>12)||(preh<12&&preh+Math.trunc(parseInt(document.getElementById("mto").value)/60)==11&&prem+parseInt(document.getElementById("mto").value)-Math.trunc(parseInt(document.getElementById("mto").value)/60))>60) {
+	ideg=(preh+prem/60)*30;
+	iideg=((hours-12)+(minutes)/60)*30;
+	if (prem>parseInt(document.getElementById("mto").value)-Math.trunc(parseInt(document.getElementById("mto").value)/60)) {
+document.getElementById("bc").style.background="conic-gradient(red "+iideg+"deg, #EBEB83 "+iideg+"deg "+ideg+"deg, red "+ideg+"deg)";
+	} else {
+document.getElementById("bc").style.background="conic-gradient(#EBEB83 "+ideg+"deg, red "+ideg+"deg "+iideg+"deg, #EBEB83 "+iideg+"deg)";
+	}
+	
+} else {	
+	if (preh<12){
+		ideg=(preh+prem/60)*30;
+	} else {
+		ideg=((preh-12)+prem/60)*30;
+	}
+	if (preh+Math.trunc(parseInt(document.getElementById("mto").value)/60)>12||(preh+Math.trunc(parseInt(document.getElementById("mto").value)/60)==11&&prem+parseInt(document.getElementById("mto").value)-Math.trunc(parseInt(document.getElementById("mto").value)/60)>60)) {
+		iideg=((hours-12)+(minutes)/60)*30;
+	} else {
+		iideg=(hours+minutes/60)*30;
+	}
+	document.getElementById("bc").style.background="conic-gradient(#EBEB83 "+ideg+"deg, red "+ideg+"deg "+iideg+"deg, #EBEB83 "+iideg+"deg)";
+
+	// //border: 10px solid #F4F48E;
+	// border-image-source: linear-gradient(45deg, rgb(0,143,104), rgb(250,224,66));
+ //  border-image-slice: 1;
+}
+
+}
+if (prem>parseInt(document.getElementById("mto").value)-Math.trunc(parseInt(document.getElementById("mto").value)/60)){
+	mdeg=prem*6;
+	mmdeg=minutes*6;
+	if(minutes<prem){
+		document.getElementById("prebc").style.background="conic-gradient(red "+mmdeg+"deg, #F4F48E "+mmdeg+"deg "+mdeg+"deg, red "+mdeg+"deg)";
+	} else{
+		document.getElementById("prebc").style.background="conic-gradient(#F4F48E "+mdeg+"deg, red "+mdeg+"deg "+mmdeg+"deg, #F4F48E "+mmdeg+"deg)";
+	}
+
+	//document.getElementById("bc").style.border="10px solid";
+	//document.getElementById("bc").setAttribute("style", "-webkit-mask: conic-gradient(red "+mmdeg+"deg, #F4F48E "+mmdeg+"deg "+mdeg+"deg, red"+mdeg+"deg)");
+
+}	else {
+	mdeg=prem*6;
+	mmdeg=minutes*6;
+	document.getElementById("prebc").style.background="conic-gradient(#F4F48E "+mdeg+"deg, red "+mdeg+"deg "+mmdeg+"deg, #F4F48E "+mmdeg+"deg)";
+	//document.getElementById("bc").style.border="10px solid";
+	//document.getElementById("bc").setAttribute("style", "-webkit-mask: conic-gradient(#F4F48E "+mdeg+"deg, red "+mdeg+"deg "+mmdeg+"deg, #F4F48E"+mmdeg+"deg)");
+	}
+},60000);
+document.getElementById("cont").style.display="none";
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function createSecondLines(){
+  var clock = document.querySelector(".clock");
+  var rotate = 0;
+  
+  var byFive = function(n) {
+    return (n / 5 === parseInt(n / 5, 10)) ? true : false;
+  };
+  
+  for (var i=0; i < 30; i++) {
+    var span = document.createElement("span");
+   
+    if (byFive(i)) {
+      span.className = "fives";
+    }
+    
+    span.style.transform = "translate(-50%,-50%) rotate("+ rotate + "deg)";
+    clock.appendChild(span);
+    rotate += 6;
+  }
+})();
+
+(function setClock() {
+  var time = new Date();
+  
+  var hours = time.getHours();
+  var minutes = time.getMinutes();
+  var seconds = time.getSeconds();
+
+  if (minutes+25>60){
+	document.getElementById("h").value=hours+1;
+  	document.getElementById("m").value=minutes+25-60;
+  } else {
+  	document.getElementById("h").value=hours;
+  	document.getElementById("m").value=minutes+25;
+  }
+  
+
+  var clock = {
+    hours: document.querySelector('.hours'),
+    minutes: document.querySelector('.minutes'),
+    seconds: document.querySelector('.seconds')
+  };
+  
+  var deg = {
+    hours: 30 * hours + .5 * minutes,
+    minutes: 6 * minutes + .1 * seconds,
+    seconds: 6 * seconds
+  }
+  
+  clock.hours.style.transform = 'rotate(' + deg.hours + 'deg)';
+  clock.minutes.style.transform = 'rotate(' + deg.minutes + 'deg)';
+  clock.seconds.style.transform = 'rotate(' + deg.seconds + 'deg)';
+  
+  var runClock = function(){
+    deg.hours += 360/43200;
+    deg.minutes += 360/3600;
+    deg.seconds += 360/60;
+    
+    clock.hours.style.transform = 'rotate(' + deg.hours + 'deg)';
+    clock.minutes.style.transform = 'rotate(' + deg.minutes + 'deg)';
+    clock.seconds.style.transform = 'rotate(' + deg.seconds + 'deg)';
+  };
+  
+  setInterval(runClock,1000);
+  
+  (function printDate(){
+    var months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+    var print = time.getDate() + ' / ' + months[time.getMonth()];
+    var output = document.querySelectorAll('output');
+    
+    [].forEach.call(output, function(node){
+      node.innerHTML = print;
+    });
+  })();
+  
+})();
+</script>
+  </body>
+</html>
